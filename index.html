@@ -1,305 +1,202 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>JustPoint — Points, Value & Loyalty Intelligence</title>
-<meta name="description" content="Universal loyalty and points layer connecting consumers, retailers and reward ecosystems.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-:root{
-  --ink:#1a0f00;
-  --accent:#f97316;
-  --bg:#f9f7f4;
-  --white:#ffffff;
-  --mid:#6b7280;
-  --light:#f3f4f6;
-}
-body{font-family:'DM Sans',sans-serif;color:var(--ink);background:var(--bg);}
-nav{background:var(--ink);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100;}
-.nav-brand{color:white;font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;text-decoration:none;}
-.nav-links a{color:rgba(255,255,255,0.7);text-decoration:none;margin-left:1.5rem;font-size:0.85rem;font-weight:500;cursor:pointer;transition:color 0.2s;}
-.nav-links a:hover,.nav-links a.active{color:var(--accent);}
-.page{display:none;min-height:80vh;}
-.page.active{display:block;}
-/* Hero */
-.hero{background:var(--ink);color:white;padding:5rem 2rem;text-align:center;}
-.hero-group{font-size:0.7rem;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem;}
-.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.5rem,6vw,4.5rem);font-weight:700;line-height:1.1;margin-bottom:1rem;}
-.hero p{font-size:1.1rem;color:rgba(255,255,255,0.7);max-width:600px;margin:0 auto 2rem;line-height:1.7;}
-.hero-cta{display:inline-block;background:var(--accent);color:white;padding:0.9rem 2.5rem;font-weight:600;font-size:0.9rem;letter-spacing:0.05em;cursor:pointer;border:none;text-decoration:none;margin:0.3rem;}
-.hero-cta.secondary{background:transparent;border:1px solid rgba(255,255,255,0.4);}
-/* Sections */
-.section{padding:4rem 2rem;max-width:1000px;margin:0 auto;}
-.section-title{font-family:'Cormorant Garamond',serif;font-size:2.2rem;font-weight:700;margin-bottom:0.5rem;}
-.section-sub{color:var(--mid);margin-bottom:2.5rem;line-height:1.7;max-width:600px;}
-/* Services */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1rem;}
-.service-item{background:var(--white);padding:1rem 1.2rem;border-left:3px solid var(--accent);font-size:0.9rem;font-weight:500;}
-/* Packages */
-.pkg-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem;}
-.pkg-card{background:var(--white);padding:2rem;border-top:3px solid var(--accent);}
-.pkg-name{font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-weight:700;margin-bottom:0.5rem;}
-.pkg-price{font-size:1.8rem;font-weight:700;color:var(--accent);margin-bottom:0.5rem;}
-.pkg-desc{font-size:0.85rem;color:var(--mid);line-height:1.6;margin-bottom:1.5rem;}
-.pkg-btn{background:var(--ink);color:white;border:none;padding:0.75rem 1.5rem;font-size:0.85rem;font-weight:600;cursor:pointer;width:100%;letter-spacing:0.05em;transition:opacity 0.2s;}
-.pkg-btn:hover{opacity:0.85;}
-/* Contact form */
-.contact-layout{display:grid;grid-template-columns:1fr 1fr;gap:3rem;padding:4rem 2rem;max-width:1000px;margin:0 auto;}
-@media(max-width:768px){.contact-layout{grid-template-columns:1fr;}}
-.form-input,.form-textarea{width:100%;border:1px solid #d1d5db;padding:0.8rem;font-family:'DM Sans',sans-serif;font-size:0.9rem;margin-bottom:0.8rem;outline:none;}
-.form-input:focus,.form-textarea:focus{border-color:var(--accent);}
-.form-textarea{min-height:120px;resize:vertical;}
-.form-submit{width:100%;background:var(--accent);color:white;border:none;padding:1rem;font-size:0.9rem;font-weight:600;cursor:pointer;letter-spacing:0.05em;}
-/* Modal */
-.modal-overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,0.7);z-index:1000;align-items:center;justify-content:center;}
-.modal-box{background:white;padding:2.5rem;max-width:480px;width:90%;border-top:4px solid var(--accent);position:relative;max-height:90vh;overflow-y:auto;}
-.modal-close{position:absolute;top:1rem;right:1.5rem;cursor:pointer;font-size:1.5rem;color:var(--mid);background:none;border:none;}
-/* Footer */
-footer{background:var(--ink);color:rgba(255,255,255,0.5);padding:2rem;text-align:center;font-size:0.8rem;}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>JustPoint — Points, Value & Loyalty — Simplified</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    :root{
+      --primary:#4a1a7a;
+      --deep:#2a0d45;
+      --light:#7a2ec0;
+      --accent:#f5a623;
+      --bg:#fdf8ff;
+      --white:#ffffff;
+      --text:#1a1a2e;
+      --muted:#666;
+    }
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.6}
+    a{color:var(--accent);text-decoration:none}
+
+    /* NAV */
+    nav{background:var(--deep);padding:1rem 2rem;display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;z-index:100}
+    .nav-logo{color:var(--white);font-weight:700;font-size:1.1rem;letter-spacing:-0.02em}
+    .nav-logo span{color:var(--accent)}
+    .nav-cta{background:var(--accent);color:var(--deep)!important;padding:0.5rem 1.2rem;border-radius:4px;font-weight:600;font-size:0.85rem}
+
+    /* HERO */
+    .hero{background:linear-gradient(135deg,var(--deep) 0%,var(--primary) 100%);color:var(--white);padding:5rem 2rem 4rem;text-align:center}
+    .hero-tag{background:var(--accent);color:var(--deep);font-size:0.7rem;font-weight:700;letter-spacing:0.1em;padding:0.3rem 0.8rem;border-radius:20px;display:inline-block;margin-bottom:1.5rem;text-transform:uppercase}
+    .hero h1{font-size:clamp(2rem,5vw,3.5rem);font-weight:800;letter-spacing:-0.03em;line-height:1.1;margin-bottom:1rem}
+    .hero h1 em{color:var(--accent);font-style:normal}
+    .hero-desc{font-size:1.1rem;opacity:0.85;max-width:680px;margin:0 auto 2.5rem}
+    .btn-primary{background:var(--accent);color:var(--deep);padding:0.9rem 2.2rem;border-radius:6px;font-weight:700;font-size:0.95rem;border:none;cursor:pointer;letter-spacing:0.02em;display:inline-block;transition:opacity 0.2s}
+    .btn-primary:hover{opacity:0.85}
+    .btn-outline{background:transparent;color:var(--white);padding:0.9rem 2.2rem;border-radius:6px;font-weight:600;font-size:0.95rem;border:2px solid rgba(255,255,255,0.3);cursor:pointer;margin-left:1rem}
+    .hero-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
+
+    /* STATS */
+    .stats{background:var(--white);padding:2rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;box-shadow:0 2px 12px rgba(0,0,0,0.06)}
+    .stat{text-align:center}
+    .stat-num{font-size:1.8rem;font-weight:800;color:var(--primary)}
+    .stat-label{font-size:0.75rem;color:var(--muted);letter-spacing:0.05em;text-transform:uppercase}
+
+    /* SERVICES */
+    .section{padding:4rem 2rem;max-width:1100px;margin:0 auto}
+    .section-tag{font-size:0.7rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);margin-bottom:0.5rem}
+    .section-title{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;letter-spacing:-0.02em;color:var(--deep);margin-bottom:0.5rem}
+    .section-sub{color:var(--muted);margin-bottom:3rem;max-width:600px}
+    .svc-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.5rem}
+    .svc-card{background:var(--white);border-radius:12px;padding:1.8rem;box-shadow:0 2px 12px rgba(0,0,0,0.06);transition:transform 0.2s,box-shadow 0.2s}
+    .svc-card:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.1)}
+    .svc-icon{font-size:2rem;margin-bottom:0.8rem}
+    .svc-name{font-weight:700;font-size:1rem;color:var(--deep);margin-bottom:0.4rem}
+    .svc-desc{font-size:0.875rem;color:var(--muted);line-height:1.5}
+
+    /* CTA BAND */
+    .cta-band{background:linear-gradient(135deg,var(--primary),var(--light));color:var(--white);padding:4rem 2rem;text-align:center}
+    .cta-band h2{font-size:1.8rem;font-weight:800;margin-bottom:0.8rem}
+    .cta-band p{opacity:0.85;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
+
+    /* CONTACT */
+    .contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;max-width:900px;margin:0 auto}
+    @media(max-width:640px){.contact-wrap{grid-template-columns:1fr}}
+    .form-group{margin-bottom:1rem}
+    .form-group label{display:block;font-size:0.8rem;font-weight:600;color:var(--deep);margin-bottom:0.3rem;text-transform:uppercase;letter-spacing:0.05em}
+    .form-group input,.form-group select,.form-group textarea{width:100%;padding:0.75rem;border:1px solid #ddd;border-radius:6px;font-size:0.9rem;outline:none;transition:border 0.2s}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--primary)}
+    .form-group textarea{height:100px;resize:vertical}
+    .form-submit{width:100%;background:var(--primary);color:var(--white);padding:1rem;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-size:0.95rem}
+    .contact-info h3{font-size:1.2rem;font-weight:700;color:var(--deep);margin-bottom:1.5rem}
+    .contact-item{display:flex;gap:0.8rem;margin-bottom:1rem;align-items:flex-start}
+    .contact-item-icon{font-size:1.2rem;margin-top:0.1rem}
+    .contact-item-text{font-size:0.9rem;color:var(--muted)}
+    .contact-item-label{font-weight:600;color:var(--deep);font-size:0.85rem}
+
+    /* FOOTER */
+    footer{background:var(--deep);color:rgba(255,255,255,0.6);padding:2rem;text-align:center;font-size:0.8rem}
+    footer strong{color:var(--white)}
+
+    /* SUCCESS */
+    .success-banner{display:none;background:#d4edda;border:1px solid #c3e6cb;color:#155724;padding:1rem 1.5rem;border-radius:8px;margin-bottom:1rem;font-weight:600}
+  </style>
 </head>
 <body>
 
 <nav>
-  <a class="nav-brand" href="#" onclick="showPage('home')">JustPoint</a>
-  <div class="nav-links">
-    <a onclick="showPage('home')" id="nav-home" class="active">Home</a>
-    <a onclick="showPage('services')" id="nav-services">Services</a>
-    <a onclick="showPage('packages')" id="nav-packages">Packages</a>
-    <a onclick="showPage('contact')" id="nav-contact">Contact</a>
-  </div>
+  <div class="nav-logo">JustPoint <span></span></div>
+  <a href="#contact" class="nav-cta">Launch Your Loyalty Program</a>
 </nav>
 
-<!-- HOME -->
-<div id="page-home" class="page active">
-  <div class="hero">
-    <div class="hero-group">RETAIL — Tech4Humanity Portfolio</div>
-    <h1>JustPoint</h1>
-    <p>Points, Value & Loyalty Intelligence</p>
-    <button class="hero-cta" onclick="showPage('packages')">View Packages</button>
-    <button class="hero-cta secondary" onclick="showPage('contact')">Get in Touch</button>
+<section class="hero">
+  <div class="hero-tag">T4H Portfolio · RETAIL</div>
+  <h1>JustPoint<br><em>Points, Value & Loyalty </em></h1>
+  <p class="hero-desc">JustPoint is the loyalty infrastructure layer for modern retailers. Unified points management, cross-merchant rewards, and AI-powered personalisation that keeps customers coming back....</p>
+  <div class="hero-btns">
+    <a href="#contact" class="btn-primary">Launch Your Loyalty Program</a>
+    <a href="#services" class="btn-outline">Learn More</a>
   </div>
-  <div class="section">
-    <div class="section-title">What We Do</div>
-    <div class="section-sub">Universal loyalty and points layer connecting consumers, retailers and reward ecosystems.</div>
-    <div class="services-grid">
-          <div class="service-item">✓ Loyalty Platform</div>
-          <div class="service-item">✓ Points Exchange</div>
-          <div class="service-item">✓ Retailer Integration</div>
-          <div class="service-item">✓ Consumer App</div>
-    </div>
-  </div>
+</section>
+
+<div class="stats">
+  <div class="stat"><div class="stat-num">T4H</div><div class="stat-label">Portfolio Company</div></div>
+  <div class="stat"><div class="stat-num">RETAIL</div><div class="stat-label">Business Group</div></div>
+  <div class="stat"><div class="stat-num">AU</div><div class="stat-label">Based in Australia</div></div>
+  <div class="stat"><div class="stat-num">2025</div><div class="stat-label">Active</div></div>
 </div>
 
-<!-- SERVICES -->
-<div id="page-services" class="page">
-  <div class="section">
-    <div class="section-title">Our Services</div>
-    <div class="section-sub">Universal loyalty and points layer connecting consumers, retailers and reward ecosystems.</div>
-    <div class="services-grid">
-          <div class="service-item">✓ Loyalty Platform</div>
-          <div class="service-item">✓ Points Exchange</div>
-          <div class="service-item">✓ Retailer Integration</div>
-          <div class="service-item">✓ Consumer App</div>
-    </div>
-    <div style="margin-top:2.5rem;">
-      <button class="hero-cta" style="background:var(--accent);" onclick="showPage('contact')">Enquire Now</button>
-    </div>
-  </div>
+<section class="section" id="services">
+  <div class="section-tag">What We Do</div>
+  <h2 class="section-title">Our Services</h2>
+  <p class="section-sub">JustPoint is the loyalty infrastructure layer for modern retailers. Unified points management, cross-merchant rewards, and AI-powered personalisation that keeps customers coming back.</p>
+  <div class="svc-grid">
+        <div class="svc-card">
+          <div class="svc-icon">⭐</div>
+          <div class="svc-name">Unified Loyalty Platform</div>
+          <div class="svc-desc">One points wallet that works across your entire brand portfolio — and partner networks.</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🎯</div>
+          <div class="svc-name">AI Personalisation Engine</div>
+          <div class="svc-desc">Deliver personalised offers and rewards based on individual purchase history and predicted intent.</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">🔗</div>
+          <div class="svc-name">Cross-Merchant Network</div>
+          <div class="svc-desc">Join the JustPoint network and offer your customers rewards from complementary merchants.</div>
+        </div>
+        <div class="svc-card">
+          <div class="svc-icon">📈</div>
+          <div class="svc-name">Analytics & Reporting</div>
+          <div class="svc-desc">Comprehensive loyalty analytics — cohort analysis, churn prediction, and campaign ROI measurement.</div>
+        </div></div>
+</section>
+
+<div class="cta-band">
+  <h2>Ready to get started?</h2>
+  <p>Talk to the JustPoint team today. We'll respond within 24 hours.</p>
+  <a href="#contact" class="btn-primary" style="color:var(--deep)">Launch Your Loyalty Program</a>
 </div>
 
-<!-- PACKAGES -->
-<div id="page-packages" class="page">
-  <div class="section">
-    <div class="section-title">Packages & Pricing</div>
-    <div class="section-sub">All payments processed securely by Tech4Humanity Ltd (ABN 61 605 746 618). Tax invoice issued automatically.</div>
-    <div class="pkg-grid">
-    <div class="pkg-card">
-      <div class="pkg-name">Consumer Free</div>
-      <div class="pkg-price">$0 AUD</div>
-      <div class="pkg-desc">Free for consumers. Points tracking + exchange.</div>
-      <button class="pkg-btn" onclick="initiateBooking('Consumer Free','0')">Book Now</button>
-    </div>
-    <div class="pkg-card">
-      <div class="pkg-name">Retailer Plan</div>
-      <div class="pkg-price">$199 AUD</div>
-      <div class="pkg-desc">Monthly. Full loyalty program management.</div>
-      <button class="pkg-btn" onclick="initiateBooking('Retailer Plan','199')">Book Now</button>
-    </div>
-    <div class="pkg-card">
-      <div class="pkg-name">Enterprise Network</div>
-      <div class="pkg-price">POA</div>
-      <div class="pkg-desc">Multi-retailer network + API. POA.</div>
-      <button class="pkg-btn" onclick="showPage('contact')">Get a Quote</button>
-    </div>
-    </div>
-    <div style="margin-top:2rem;padding:1.5rem;background:var(--light);font-size:0.82rem;color:var(--mid);line-height:1.8;">
-      <strong>Payment Methods:</strong> Card (Stripe) &middot; PayPal &middot; ANZ Bank Transfer (BSB: 013-711 / Acc: 331 328 406) &middot; ABN: 61 605 746 618
-    </div>
-  </div>
-</div>
-
-<!-- CONTACT -->
-<div id="page-contact" class="page">
-  <div class="contact-layout">
+<section class="section" id="contact">
+  <div class="section-tag">Get in Touch</div>
+  <h2 class="section-title">Contact Us</h2>
+  <p class="section-sub">Fill in the form and we'll be in touch within 24 hours.</p>
+  <div class="contact-wrap">
     <div>
-      <div class="section-title">Get in Touch</div>
-      <p style="color:var(--mid);line-height:1.7;margin:1rem 0 1.5rem;">Universal loyalty and points layer connecting consumers, retailers and reward ecosystems.</p>
-      <div style="font-size:0.9rem;line-height:2.2;">
-        <div><strong>Email:</strong> <a href="mailto:troy@tech4humanity.com.au" style="color:var(--accent);">troy@tech4humanity.com.au</a></div>
-        
-        <div><strong>ABN:</strong> 61 605 746 618</div>
-        <div><strong>Group:</strong> RETAIL — Tech4Humanity Portfolio</div>
-      </div>
+      <div class="success-banner" id="success-msg">✓ Thanks! We'll be in touch within 24 hours.</div>
+      <div class="form-group"><label>Your Name</label><input type="text" id="cf-name" placeholder="Jane Smith"></div>
+      <div class="form-group"><label>Email</label><input type="email" id="cf-email" placeholder="jane@example.com"></div>
+      <div class="form-group"><label>Phone</label><input type="tel" id="cf-phone" placeholder="+61 4xx xxx xxx"></div>
+      <div class="form-group"><label>Message</label><textarea id="cf-msg" placeholder="Tell us what you need..."></textarea></div>
+      <button class="form-submit" onclick="submitContact()">Send Message</button>
     </div>
-    <div>
-      <div style="font-size:1.1rem;font-weight:600;margin-bottom:1rem;">Send an Enquiry</div>
-      <input type="text" id="c-name" class="form-input" placeholder="Your name *">
-      <input type="email" id="c-email" class="form-input" placeholder="Email address *">
-      <input type="tel" id="c-phone" class="form-input" placeholder="Phone (optional)">
-      <textarea id="c-message" class="form-textarea" placeholder="Tell us about your project or enquiry..."></textarea>
-      <button class="form-submit" onclick="submitEnquiry()">Send Enquiry</button>
+    <div class="contact-info">
+      <h3>Get in Touch</h3>
+      <div class="contact-item"><div class="contact-item-icon">📧</div><div><div class="contact-item-label">Email</div><div class="contact-item-text">hello@justpoint.com.au</div></div></div>
+      <div class="contact-item"><div class="contact-item-icon">📍</div><div><div class="contact-item-label">Location</div><div class="contact-item-text">Sydney, Australia</div></div></div>
+      <div class="contact-item"><div class="contact-item-icon">🏢</div><div><div class="contact-item-label">ABN</div><div class="contact-item-text">61 605 746 618</div></div></div>
+      <div class="contact-item"><div class="contact-item-icon">🌐</div><div><div class="contact-item-label">Part of T4H Portfolio</div><div class="contact-item-text">tech4humanity.com.au</div></div></div>
     </div>
   </div>
-</div>
-
-<!-- BOOKING MODAL -->
-<div id="pay-modal" class="modal-overlay">
-  <div class="modal-box">
-    <button class="modal-close" onclick="closeModal()">&times;</button>
-    <div style="font-family:'Cormorant Garamond',serif;font-size:1.5rem;font-weight:700;margin-bottom:0.2rem;" id="modal-title"></div>
-    <div style="font-size:2rem;font-weight:700;color:var(--accent);margin-bottom:1rem;" id="modal-price"></div>
-    <div id="modal-form">
-      <input type="text" id="m-name" class="form-input" placeholder="Your full name *">
-      <input type="email" id="m-email" class="form-input" placeholder="Email for invoice *">
-      <input type="tel" id="m-phone" class="form-input" placeholder="Phone (optional)">
-      <div style="background:#f0f9ff;border:1px solid #bae6fd;padding:1rem;margin-bottom:1rem;font-size:0.85rem;line-height:2;">
-        <strong>ANZ Bank Transfer</strong><br>
-        Account: Tech4Humanity Ltd &middot; BSB: 013-711 &middot; Acc: 331 328 406<br>
-        Reference: Your name &middot; JustPoint
-      </div>
-      <button onclick="payStripe()" style="width:100%;background:#635BFF;color:white;border:none;padding:1rem;font-weight:600;cursor:pointer;margin-bottom:0.5rem;font-size:0.85rem;">&#128179; Pay by Card / Apple Pay (Stripe)</button>
-      <button onclick="openPayPal()" style="width:100%;background:#0070BA;color:white;border:none;padding:1rem;font-weight:600;cursor:pointer;margin-bottom:1rem;font-size:0.85rem;">&#128179; Pay with PayPal</button>
-      <p style="font-size:0.72rem;color:#aaa;text-align:center;">&#128274; Payments managed by Tech4Humanity Ltd &middot; ABN 61 605 746 618</p>
-    </div>
-    <div id="modal-loading" style="display:none;text-align:center;padding:2rem;">
-      <div style="font-size:1.2rem;margin-bottom:0.5rem;">&#8987; Creating checkout&hellip;</div>
-    </div>
-  </div>
-</div>
+</section>
 
 <footer>
-  <div style="font-family:'Cormorant Garamond',serif;font-size:1.1rem;color:rgba(255,255,255,0.8);margin-bottom:0.5rem;">JustPoint</div>
-  <div>Points, Value & Loyalty Intelligence &middot; ABN 61 605 746 618</div>
-  <div style="margin-top:0.5rem;">Part of the Tech4Humanity Portfolio &middot; RETAIL</div>
+  <strong>JustPoint</strong> · A Tech for Humanity Company · ABN 61 605 746 618 · Sydney, Australia
 </footer>
 
 <script>
-const BRIDGE = 'https://m5oqj21chd.execute-api.ap-southeast-2.amazonaws.com/lambda/invoke';
-let _pkg = '', _amount = '';
+  const BRIDGE = 'https://m5oqj21chd.execute-api.ap-southeast-2.amazonaws.com/lambda/invoke';
+  const SOURCE = 'justpoint';
 
-function showPage(name) {
-  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
-  const el = document.getElementById('page-' + name);
-  if (el) el.classList.add('active');
-  const nav = document.getElementById('nav-' + name);
-  if (nav) nav.classList.add('active');
-  window.scrollTo(0, 0);
-}
-
-function initiateBooking(pkg, amount) {
-  _pkg = pkg; _amount = amount;
-  document.getElementById('modal-title').textContent = pkg;
-  document.getElementById('modal-price').textContent = '$' + parseInt(amount).toLocaleString() + ' AUD';
-  document.getElementById('modal-form').style.display = 'block';
-  document.getElementById('modal-loading').style.display = 'none';
-  document.getElementById('m-name').value = '';
-  document.getElementById('m-email').value = '';
-  document.getElementById('pay-modal').style.display = 'flex';
-}
-
-function closeModal() { document.getElementById('pay-modal').style.display = 'none'; }
-
-async function saveLead(data) {
-  try {
-    const sql = `INSERT INTO cap_leads (email, name, phone, source, status, metadata) VALUES ('${(data.email||'').replace(/'/g,"''")}','${(data.name||'').replace(/'/g,"''")}','${(data.phone||'').replace(/'/g,"''")}','justpoint','new','${JSON.stringify(data.meta||{}).replace(/'/g,"''")}'::jsonb) RETURNING id`;
-    const r = await fetch(BRIDGE, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fn:'troy-sql-executor',sql})});
-    return (await r.json()).rows?.[0]?.id;
-  } catch(e) { return null; }
-}
-
-async function payStripe() {
-  const name = document.getElementById('m-name').value.trim();
-  const email = document.getElementById('m-email').value.trim();
-  if (!name) { document.getElementById('m-name').style.borderColor='#e53e3e'; document.getElementById('m-name').focus(); return; }
-  if (!email || !email.includes('@')) { document.getElementById('m-email').style.borderColor='#e53e3e'; document.getElementById('m-email').focus(); return; }
-  document.getElementById('modal-form').style.display = 'none';
-  document.getElementById('modal-loading').style.display = 'block';
-  await saveLead({name, email, phone: document.getElementById('m-phone').value.trim(), meta:{type:'stripe_initiated',package:_pkg,amount:_amount,business:'justpoint'}});
-  try {
-    const r = await fetch(BRIDGE, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({
-      fn:'troy-stripe-executor', action:'create_checkout_session',
-      params:{
-        mode:'payment',
-        line_items:[{price_data:{currency:'aud',unit_amount:parseInt(_amount)*100,product_data:{name:_pkg + ' — JustPoint',description:'Universal loyalty and points layer connecting consumers, retailers and reward ecosystems.'}},quantity:1}],
-        success_url:'https://justpoint.vercel.app/?payment=success&pkg='+encodeURIComponent(_pkg),
-        cancel_url:'https://justpoint.vercel.app/?payment=cancelled',
-        customer_email:email,
-        invoice_creation:{enabled:true},
-        payment_intent_data:{description:_pkg+' — JustPoint',metadata:{customer_name:name,package:_pkg,business:'justpoint'}}
-      }
-    })}});
-    const d = await r.json();
-    if (d.url) { window.location.href = d.url; } else { throw new Error(d.error||'No URL'); }
-  } catch(e) {
-    document.getElementById('modal-form').style.display = 'block';
-    document.getElementById('modal-loading').style.display = 'none';
-    alert('Payment error. Please use bank transfer or email troy@tech4humanity.com.au.\n' + e.message);
+  async function saveLead(data) {
+    try {
+      const meta = JSON.stringify(data.metadata || {});
+      const sql = `INSERT INTO cap_leads (email, name, phone, source, status, metadata) VALUES ('${(data.email||'').replace(/'/g,"''")}',' ${(data.name||'').replace(/'/g,"''")}',' ${(data.phone||'').replace(/'/g,"''")}',' ${SOURCE}','new','${meta.replace(/'/g,"''")}'::jsonb) RETURNING id`;
+      const r = await fetch(BRIDGE, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fn:'troy-sql-executor',sql})});
+      const d = await r.json();
+      return d.rows?.[0]?.id || null;
+    } catch(e) { return null; }
   }
-}
 
-function openPayPal() {
-  const url = 'https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=troy.latter%404pm.net.au&item_name='+encodeURIComponent(_pkg + ' — JustPoint')+'&currency_code=AUD&no_shipping=1&amount='+_amount;
-  window.open(url, '_blank');
-}
-
-async function submitEnquiry() {
-  const name = document.getElementById('c-name').value.trim();
-  const email = document.getElementById('c-email').value.trim();
-  const phone = document.getElementById('c-phone').value.trim();
-  const msg = document.getElementById('c-message').value.trim();
-  if (!name || !email) { alert('Please enter your name and email.'); return; }
-  const btn = document.querySelector('.form-submit');
-  btn.textContent = 'Sending...'; btn.disabled = true;
-  await saveLead({name, email, phone, meta:{type:'enquiry',message:msg,business:'justpoint'}});
-  btn.textContent = 'Send Enquiry'; btn.disabled = false;
-  alert('Thanks ' + name + '! We\'ll be in touch within 24 hours.');
-  document.getElementById('c-name').value = ''; document.getElementById('c-email').value = '';
-  document.getElementById('c-phone').value = ''; document.getElementById('c-message').value = '';
-}
-
-// Payment return handler
-(function() {
-  const p = new URLSearchParams(window.location.search);
-  if (p.get('payment') === 'success') {
-    setTimeout(() => {
-      const b = document.createElement('div');
-      b.style.cssText = 'position:fixed;top:70px;left:50%;transform:translateX(-50%);background:#276749;color:white;padding:1rem 2rem;border-radius:6px;z-index:9999;font-size:0.9rem;font-weight:600;max-width:90vw;text-align:center;';
-      b.innerHTML = '&#10003; Payment confirmed! Invoice emailed. We\'ll be in touch shortly.';
-      document.body.appendChild(b);
-      setTimeout(() => b.remove(), 8000);
-      window.history.replaceState({}, '', '/');
-    }, 300);
+  async function submitContact() {
+    const name  = document.getElementById('cf-name').value.trim();
+    const email = document.getElementById('cf-email').value.trim();
+    const phone = document.getElementById('cf-phone').value.trim();
+    const msg   = document.getElementById('cf-msg').value.trim();
+    if (!name) { alert('Please enter your name.'); return; }
+    if (!email && !phone) { alert('Please enter an email or phone number.'); return; }
+    const btn = document.querySelector('.form-submit');
+    btn.textContent = 'Sending...'; btn.disabled = true;
+    await saveLead({ name, email, phone, metadata: { type:'enquiry', message: msg } });
+    btn.textContent = 'Send Message'; btn.disabled = false;
+    document.getElementById('success-msg').style.display = 'block';
+    document.getElementById('cf-name').value = '';
+    document.getElementById('cf-email').value = '';
+    document.getElementById('cf-phone').value = '';
+    document.getElementById('cf-msg').value = '';
   }
-})();
-
-document.getElementById('pay-modal').addEventListener('click', function(e) {
-  if (e.target === this) closeModal();
-});
 </script>
 </body>
 </html>
