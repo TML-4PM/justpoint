@@ -167,16 +167,21 @@
 </footer>
 
 <script>
-  const BRIDGE = 'https://m5oqj21chd.execute-api.ap-southeast-2.amazonaws.com/lambda/invoke';
-  const SOURCE = 'justpoint';
-
   async function saveLead(data) {
     try {
-      const meta = JSON.stringify(data.metadata || {});
-      const sql = `INSERT INTO cap_leads (email, name, phone, source, status, metadata) VALUES ('${(data.email||'').replace(/'/g,"''")}',' ${(data.name||'').replace(/'/g,"''")}',' ${(data.phone||'').replace(/'/g,"''")}',' ${SOURCE}','new','${meta.replace(/'/g,"''")}'::jsonb) RETURNING id`;
-      const r = await fetch(BRIDGE, {method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({fn:'troy-sql-executor',sql})});
+      const r = await fetch('/api/lead', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: data.name || '',
+          email: data.email || '',
+          phone: data.phone || '',
+          message: (data.metadata && data.metadata.message) || '',
+          source: 'justpoint'
+        })
+      });
       const d = await r.json();
-      return d.rows?.[0]?.id || null;
+      return d.id || null;
     } catch(e) { return null; }
   }
 
